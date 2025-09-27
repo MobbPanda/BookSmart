@@ -10,6 +10,13 @@ repositories {
 }
 
 dependencies {
+    // Librerías estándar de Kotlin
+    implementation(kotlin("stdlib"))
+
+    // Corutinas
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.8.1")
+
+    // Testing
     testImplementation(kotlin("test"))
 }
 
