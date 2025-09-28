@@ -1,6 +1,8 @@
 package org.example
+import kotlinx.coroutines.delay //// Import necesario para simular espera en corrutinas
 
-class GestorPrestamo {
+// Se define como 'object' porque no se necesita crear múltiples instancias
+object GestorPrestamo {
 
     fun inicializarCatalogo(): List<Libro> = listOf(
         LibroFisico("Estructuras de Datos", "Goodrich", 12990, 7, esReferencia = false),
@@ -18,11 +20,12 @@ class GestorPrestamo {
         return (subtotal * (1 - descuento)).toInt()
     }
 
-    fun procesarPrestamo(libro: Libro): EstadoPrestamo {
+    // Simula el proceso de préstamo de un libro, con espera artificial utilizando delay
+    suspend fun procesarPrestamo(libro: Libro): EstadoPrestamo {
         return if (!libro.esPrestable) {
             EstadoPrestamo.Error("El libro '${libro.titulo}' no se puede prestar.")
         } else {
-            println("Procesando préstamo...")
+            delay(3000) // espera 3 segundos
             EstadoPrestamo.EnPrestamo
         }
     }
@@ -36,6 +39,7 @@ class GestorPrestamo {
 
     fun generarReporte(librosPrestados: List<Libro>) {
         println("Reporte de libros prestados:")
+        // Filtra los libros que sí se pueden prestar y muestra su descripción
         librosPrestados
             .filter { it.esPrestable }
             .map { it.descripcion() }
