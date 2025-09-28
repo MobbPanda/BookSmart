@@ -1,6 +1,6 @@
 package org.example
 
-open class Libro(
+abstract class Libro(
     val titulo: String,
     val autor: String,
     val precioBase: Int,      // Se deja en entero ya que el CLP no trabaja con decimales
