@@ -6,9 +6,9 @@ object GestorPrestamo {
 
     fun inicializarCatalogo(): List<Libro> = listOf(
         LibroFisico("Estructuras de Datos", "Goodrich", 12990, 7, esReferencia = false),
-        LibroFisico("Diccionario Enciclopédico", "Varios", 15990, 0, esReferencia = true),
-        LibroDigital("Programación en Kotlin", "JetBrains", 9990, 10, drm = true),
-        LibroDigital("Algoritmos Básicos", "Cormen", 11990, 10, drm = false)
+        LibroFisico("Diccionario Enciclopedico", "Varios", 15990, 0, esReferencia = true),
+        LibroDigital("Programacion en Kotlin", "JetBrains", 9990, 10, drm = true),
+        LibroDigital("Algoritmos Basicos", "Cormen", 11990, 10, drm = false)
     )
 
     fun aplicarDescuento(subtotal: Int, tipoUsuario: String): Int {

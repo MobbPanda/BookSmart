@@ -59,7 +59,7 @@ class LibroFisico(
         if (esReferencia) 0 else precioBase
 
     override fun descripcion(): String {
-        val tipo = if (esReferencia) "Referencia (NO se presta)" else "Físico"
+        val tipo = if (esReferencia) "Referencia (NO se presta)" else "Fisico"
         return "[$tipo] " + super.descripcion()
     }
 }
